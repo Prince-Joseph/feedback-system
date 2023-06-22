@@ -1,0 +1,17 @@
+<!-- profile.html -->
+{% extends "base.html" %}
+{% block content %}
+<h1>Profile</h1>
+<p>
+    Name: {{request.user.fullname}}
+</p>
+<p>
+    Number: {{request.user.contact_number}}
+</p>
+<h1>Update Profile</h1>
+<form method="POST" action="{% url 'profile_update' %}">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">Update</button>
+</form>
+{% endblock content %}
