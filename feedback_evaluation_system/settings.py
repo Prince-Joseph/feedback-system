@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     'users.apps.UsersConfig',
     'institute.apps.InstituteConfig',
+    'feedback.apps.FeedbackConfig',
 ]
 
 MIDDLEWARE = [
