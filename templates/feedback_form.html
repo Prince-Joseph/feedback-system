@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {% for question in questions %}
+
+    <div>
+        <label for="q{{question.id}}">{{ question.text}}</label>
+        <input id="q{{question.id}}" type="number" min="0" max="{{question.max_value}}">
+        <span>/{{question.max_value}}</span>
+    </div>
+
+    {% endfor %}
+
+    <button type="submit">submit</button>
+</form>
+
+{% endblock content %}
