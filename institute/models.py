@@ -1,5 +1,5 @@
 from django.db import models
-
+# from users.models import CustomUser
 
 class Department(models.Model):
     name = models.CharField(max_length=50, unique=True)
