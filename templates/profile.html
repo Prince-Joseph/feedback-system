@@ -8,6 +8,20 @@
 <p>
     Number: {{request.user.contact_number}}
 </p>
+<p>
+     {{request.user.designation}} of {{request.user.department}}
+</p>
+<p>
+    designation overview:
+    <ul>
+        <li>Role:  {{request.user.designation.name}}</li>
+        <li>isStaff:  {{request.user.designation.is_staff}}</li>
+        <li>isStudent:  {{request.user.designation.is_student}}</li>
+        
+
+    </ul>
+</p>
+
 <h1>Update Profile</h1>
 <form method="POST" action="{% url 'profile_update' %}">
     {%csrf_token%}
