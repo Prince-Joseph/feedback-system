@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="{% url 'courses' %}">Courses</a>
+<h1>Course Creation</h1>
+<form action="{% url 'create_form_handler' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit"> Create Course </button>
+</form>
+{% endblock content %}

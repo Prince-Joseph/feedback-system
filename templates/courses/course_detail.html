@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <a href="{% url 'courses' %}">Courses</a> <br>
+  {{course.name}} <br>
+  {{course.start_date}} <br>
+  {{course.end_date}} <br>
+  T Score : {{course.t_score}}
+
+  <hr>
+  participants
+
+  {% for participant in course_particpants  %}
+    <p> {{ participant.user.fullname }} | {{ participant.user.initial_marks }} | {{participant.user.final_marks }} </p>
+    {% empty %}
+    <p>none</p>
+  {% endfor %}
+{% endblock content %}

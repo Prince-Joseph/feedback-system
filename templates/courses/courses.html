@@ -1,0 +1,10 @@
+Showing {{request.user.department}} courses under  {{request.user.designation}} {{request.user}}
+
+<a href="/course/create">create</a>
+<hr>
+
+{% for course in courses  %}
+    <a href="/course/{{ course.id }}">
+        {{ course.name }} ({{course.t_score}})
+    </a> <br>
+{% endfor %}

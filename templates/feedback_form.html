@@ -7,7 +7,7 @@
     {% for question in questions %}
 
     <div>
-        <label for="q{{question.id}}">{{ question.text}}</label>
+        <label for="q{{question.id}}">{{ question.text }}</label>
         <input id="q{{question.id}}" name="q-{{question.id}}" type="number" min="0" max="{{question.max_value}}">
         <span>/{{question.max_value}}  {{question.priority}} </span>
     </div>
