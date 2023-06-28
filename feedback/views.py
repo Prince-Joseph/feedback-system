@@ -3,6 +3,10 @@ from django.shortcuts import render
 from .models import QuestionPermit, Question
 import re
 
+def active_feedbacks(request):
+    context = {}
+    return render(request, "feedback/active_feedbacks.html", context)
+
 
 def feedback_view(request):
     permitted_questions_list = QuestionPermit.objects.filter(
@@ -10,7 +14,7 @@ def feedback_view(request):
     ).values_list("id")
     questions = Question.objects.filter(id__in=permitted_questions_list)
     context = {"questions": questions}
-    return render(request, "feedback_form.html", context)
+    return render(request, "feedback/feedback_form.html", context)
 
 
 def feedback_handler(request):
